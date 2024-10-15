@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Financial Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Add Transaction</h1>
+    <form method="post">
+        <label>Date (YYYY-MM-DD):</label>
+        <input type="date" name="date" required>
+        <label>Description:</label>
+        <input type="text" name="description" required>
+        <label>Category:</label>
+        <select name="category" required>
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Utilities">Utilities</option>
+            <option value="Health">Health</option>
+            <option value="Education">Education</option>
+        </select>
+        <label>Amount:</label>
+        <input type="number" name="amount" required>
+        <button type="submit">Add Transaction</button>
+    </form>
+    <a href="{{ url_for('view_transactions') }}">View Transactions</a>
+    <a href="{{ url_for('plot_transactions') }}">Plot Transactions</a>
+</body>
+</html>
